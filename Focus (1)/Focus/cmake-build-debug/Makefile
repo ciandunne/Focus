@@ -47,10 +47,10 @@ RM = "C:\Program Files\JetBrains\CLion 2019.3.3\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "C:\Users\cianc\Downloads\Focus (1)\Focus"
+CMAKE_SOURCE_DIR = "C:\Users\cianc\Desktop\UCD\SoftwareEngineering\easy\Focus (1)\Focus"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "C:\Users\cianc\Downloads\Focus (1)\Focus\cmake-build-debug"
+CMAKE_BINARY_DIR = "C:\Users\cianc\Desktop\UCD\SoftwareEngineering\easy\Focus (1)\Focus\cmake-build-debug"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -79,9 +79,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\cianc\Downloads\Focus (1)\Focus\cmake-build-debug\CMakeFiles" "C:\Users\cianc\Downloads\Focus (1)\Focus\cmake-build-debug\CMakeFiles\progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\cianc\Desktop\UCD\SoftwareEngineering\easy\Focus (1)\Focus\cmake-build-debug\CMakeFiles" "C:\Users\cianc\Desktop\UCD\SoftwareEngineering\easy\Focus (1)\Focus\cmake-build-debug\CMakeFiles\progress.marks"
 	$(MAKE) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\cianc\Downloads\Focus (1)\Focus\cmake-build-debug\CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\cianc\Desktop\UCD\SoftwareEngineering\easy\Focus (1)\Focus\cmake-build-debug\CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
@@ -203,6 +203,33 @@ main.c.s:
 	$(MAKE) -f CMakeFiles\Focus.dir\build.make CMakeFiles/Focus.dir/main.c.s
 .PHONY : main.c.s
 
+turns.obj: turns.c.obj
+
+.PHONY : turns.obj
+
+# target to build an object file
+turns.c.obj:
+	$(MAKE) -f CMakeFiles\Focus.dir\build.make CMakeFiles/Focus.dir/turns.c.obj
+.PHONY : turns.c.obj
+
+turns.i: turns.c.i
+
+.PHONY : turns.i
+
+# target to preprocess a source file
+turns.c.i:
+	$(MAKE) -f CMakeFiles\Focus.dir\build.make CMakeFiles/Focus.dir/turns.c.i
+.PHONY : turns.c.i
+
+turns.s: turns.c.s
+
+.PHONY : turns.s
+
+# target to generate assembly for a file
+turns.c.s:
+	$(MAKE) -f CMakeFiles\Focus.dir\build.make CMakeFiles/Focus.dir/turns.c.s
+.PHONY : turns.c.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -221,6 +248,9 @@ help:
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... turns.obj
+	@echo ... turns.i
+	@echo ... turns.s
 .PHONY : help
 
 

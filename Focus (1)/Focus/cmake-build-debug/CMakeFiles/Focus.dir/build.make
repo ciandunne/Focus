@@ -42,10 +42,10 @@ RM = "C:\Program Files\JetBrains\CLion 2019.3.3\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "C:\Users\cianc\Downloads\Focus (1)\Focus"
+CMAKE_SOURCE_DIR = "C:\Users\cianc\Desktop\UCD\SoftwareEngineering\easy\Focus (1)\Focus"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "C:\Users\cianc\Downloads\Focus (1)\Focus\cmake-build-debug"
+CMAKE_BINARY_DIR = "C:\Users\cianc\Desktop\UCD\SoftwareEngineering\easy\Focus (1)\Focus\cmake-build-debug"
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Focus.dir/depend.make
@@ -58,48 +58,62 @@ include CMakeFiles/Focus.dir/flags.make
 
 CMakeFiles/Focus.dir/main.c.obj: CMakeFiles/Focus.dir/flags.make
 CMakeFiles/Focus.dir/main.c.obj: ../main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\cianc\Downloads\Focus (1)\Focus\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/Focus.dir/main.c.obj"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\Focus.dir\main.c.obj   -c "C:\Users\cianc\Downloads\Focus (1)\Focus\main.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\cianc\Desktop\UCD\SoftwareEngineering\easy\Focus (1)\Focus\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/Focus.dir/main.c.obj"
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\Focus.dir\main.c.obj   -c "C:\Users\cianc\Desktop\UCD\SoftwareEngineering\easy\Focus (1)\Focus\main.c"
 
 CMakeFiles/Focus.dir/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Focus.dir/main.c.i"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\Users\cianc\Downloads\Focus (1)\Focus\main.c" > CMakeFiles\Focus.dir\main.c.i
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\Users\cianc\Desktop\UCD\SoftwareEngineering\easy\Focus (1)\Focus\main.c" > CMakeFiles\Focus.dir\main.c.i
 
 CMakeFiles/Focus.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Focus.dir/main.c.s"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\Users\cianc\Downloads\Focus (1)\Focus\main.c" -o CMakeFiles\Focus.dir\main.c.s
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\Users\cianc\Desktop\UCD\SoftwareEngineering\easy\Focus (1)\Focus\main.c" -o CMakeFiles\Focus.dir\main.c.s
 
 CMakeFiles/Focus.dir/input_output.c.obj: CMakeFiles/Focus.dir/flags.make
 CMakeFiles/Focus.dir/input_output.c.obj: ../input_output.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\cianc\Downloads\Focus (1)\Focus\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/Focus.dir/input_output.c.obj"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\Focus.dir\input_output.c.obj   -c "C:\Users\cianc\Downloads\Focus (1)\Focus\input_output.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\cianc\Desktop\UCD\SoftwareEngineering\easy\Focus (1)\Focus\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/Focus.dir/input_output.c.obj"
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\Focus.dir\input_output.c.obj   -c "C:\Users\cianc\Desktop\UCD\SoftwareEngineering\easy\Focus (1)\Focus\input_output.c"
 
 CMakeFiles/Focus.dir/input_output.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Focus.dir/input_output.c.i"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\Users\cianc\Downloads\Focus (1)\Focus\input_output.c" > CMakeFiles\Focus.dir\input_output.c.i
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\Users\cianc\Desktop\UCD\SoftwareEngineering\easy\Focus (1)\Focus\input_output.c" > CMakeFiles\Focus.dir\input_output.c.i
 
 CMakeFiles/Focus.dir/input_output.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Focus.dir/input_output.c.s"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\Users\cianc\Downloads\Focus (1)\Focus\input_output.c" -o CMakeFiles\Focus.dir\input_output.c.s
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\Users\cianc\Desktop\UCD\SoftwareEngineering\easy\Focus (1)\Focus\input_output.c" -o CMakeFiles\Focus.dir\input_output.c.s
 
 CMakeFiles/Focus.dir/game_init.c.obj: CMakeFiles/Focus.dir/flags.make
 CMakeFiles/Focus.dir/game_init.c.obj: ../game_init.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\cianc\Downloads\Focus (1)\Focus\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/Focus.dir/game_init.c.obj"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\Focus.dir\game_init.c.obj   -c "C:\Users\cianc\Downloads\Focus (1)\Focus\game_init.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\cianc\Desktop\UCD\SoftwareEngineering\easy\Focus (1)\Focus\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/Focus.dir/game_init.c.obj"
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\Focus.dir\game_init.c.obj   -c "C:\Users\cianc\Desktop\UCD\SoftwareEngineering\easy\Focus (1)\Focus\game_init.c"
 
 CMakeFiles/Focus.dir/game_init.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Focus.dir/game_init.c.i"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\Users\cianc\Downloads\Focus (1)\Focus\game_init.c" > CMakeFiles\Focus.dir\game_init.c.i
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\Users\cianc\Desktop\UCD\SoftwareEngineering\easy\Focus (1)\Focus\game_init.c" > CMakeFiles\Focus.dir\game_init.c.i
 
 CMakeFiles/Focus.dir/game_init.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Focus.dir/game_init.c.s"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\Users\cianc\Downloads\Focus (1)\Focus\game_init.c" -o CMakeFiles\Focus.dir\game_init.c.s
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\Users\cianc\Desktop\UCD\SoftwareEngineering\easy\Focus (1)\Focus\game_init.c" -o CMakeFiles\Focus.dir\game_init.c.s
+
+CMakeFiles/Focus.dir/turns.c.obj: CMakeFiles/Focus.dir/flags.make
+CMakeFiles/Focus.dir/turns.c.obj: ../turns.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\cianc\Desktop\UCD\SoftwareEngineering\easy\Focus (1)\Focus\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/Focus.dir/turns.c.obj"
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\Focus.dir\turns.c.obj   -c "C:\Users\cianc\Desktop\UCD\SoftwareEngineering\easy\Focus (1)\Focus\turns.c"
+
+CMakeFiles/Focus.dir/turns.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Focus.dir/turns.c.i"
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\Users\cianc\Desktop\UCD\SoftwareEngineering\easy\Focus (1)\Focus\turns.c" > CMakeFiles\Focus.dir\turns.c.i
+
+CMakeFiles/Focus.dir/turns.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Focus.dir/turns.c.s"
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\Users\cianc\Desktop\UCD\SoftwareEngineering\easy\Focus (1)\Focus\turns.c" -o CMakeFiles\Focus.dir\turns.c.s
 
 # Object files for target Focus
 Focus_OBJECTS = \
 "CMakeFiles/Focus.dir/main.c.obj" \
 "CMakeFiles/Focus.dir/input_output.c.obj" \
-"CMakeFiles/Focus.dir/game_init.c.obj"
+"CMakeFiles/Focus.dir/game_init.c.obj" \
+"CMakeFiles/Focus.dir/turns.c.obj"
 
 # External object files for target Focus
 Focus_EXTERNAL_OBJECTS =
@@ -107,11 +121,12 @@ Focus_EXTERNAL_OBJECTS =
 Focus.exe: CMakeFiles/Focus.dir/main.c.obj
 Focus.exe: CMakeFiles/Focus.dir/input_output.c.obj
 Focus.exe: CMakeFiles/Focus.dir/game_init.c.obj
+Focus.exe: CMakeFiles/Focus.dir/turns.c.obj
 Focus.exe: CMakeFiles/Focus.dir/build.make
 Focus.exe: CMakeFiles/Focus.dir/linklibs.rsp
 Focus.exe: CMakeFiles/Focus.dir/objects1.rsp
 Focus.exe: CMakeFiles/Focus.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\cianc\Downloads\Focus (1)\Focus\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable Focus.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\cianc\Desktop\UCD\SoftwareEngineering\easy\Focus (1)\Focus\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Linking C executable Focus.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Focus.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -124,6 +139,6 @@ CMakeFiles/Focus.dir/clean:
 .PHONY : CMakeFiles/Focus.dir/clean
 
 CMakeFiles/Focus.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" "C:\Users\cianc\Downloads\Focus (1)\Focus" "C:\Users\cianc\Downloads\Focus (1)\Focus" "C:\Users\cianc\Downloads\Focus (1)\Focus\cmake-build-debug" "C:\Users\cianc\Downloads\Focus (1)\Focus\cmake-build-debug" "C:\Users\cianc\Downloads\Focus (1)\Focus\cmake-build-debug\CMakeFiles\Focus.dir\DependInfo.cmake" --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" "C:\Users\cianc\Desktop\UCD\SoftwareEngineering\easy\Focus (1)\Focus" "C:\Users\cianc\Desktop\UCD\SoftwareEngineering\easy\Focus (1)\Focus" "C:\Users\cianc\Desktop\UCD\SoftwareEngineering\easy\Focus (1)\Focus\cmake-build-debug" "C:\Users\cianc\Desktop\UCD\SoftwareEngineering\easy\Focus (1)\Focus\cmake-build-debug" "C:\Users\cianc\Desktop\UCD\SoftwareEngineering\easy\Focus (1)\Focus\cmake-build-debug\CMakeFiles\Focus.dir\DependInfo.cmake" --color=$(COLOR)
 .PHONY : CMakeFiles/Focus.dir/depend
 

@@ -1,4 +1,4 @@
-#include "input_output.h"
+#include "turns.h"
 
 int main() {
 
@@ -10,7 +10,16 @@ int main() {
 
     initialize_board(board);
 
-    print_board(board);
+    int i=0;
+    enum currTurn nowturn = player1;
+
+    while(i<20){
+        if(nowturn == player1)
+            turn(players[0], board);
+        else
+            turn(players[1], board);
+        print_board(board);
+    }
 
     return 0;
 }
