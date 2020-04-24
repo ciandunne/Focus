@@ -31,20 +31,58 @@ void turn(player playernow, square board [BOARD_SIZE][BOARD_SIZE]){
         }
     }
 
-    int choice;
+    int choice = 0;
+    int newxcoord, newycoord;
+
     if(board[xcoord-1][ycoord-1].num_pieces == 1){
-        do {
+        while(choice==0){
             puts("What direction do you want to move?\n "
                  "Input 1 to go up,\n"
                  "Input 2 to go down,\n"
                  "Input 3 to go right,\n"
                  "Input 4 to go left.");
             scanf("%d", &choice);
-        }while(choice<1 || choice>4);
+
+            if(choice<1 || choice>4){
+                puts("Invalid choice, try again");
+                choice = 0;
+                continue;
+            }
+
+            switch(choice) {
+                case 1:
+                    newycoord = ycoord + 1;
+                    break;
+                case 2:
+                    newycoord = ycoord - 1;
+                    break;
+                case 3:
+                    newxcoord = xcoord + 1;
+                    break;
+                case 4:
+                    newxcoord = xcoord - 1;
+                    break;
+                default:
+                    break;
+            }
+            if(newxcoord<=0 || newxcoord>8 || newycoord<=0 || newycoord>8){
+                puts("Cant move off board, please try again");
+                choice = 0;
+                continue;
+            }
+            else if(board[newxcoord-1][newycoord-1].type == INVALID) {
+                puts("Move is to invalid square, please try again");
+                choice = 0;
+                continue;
+            }
+        }
+        board[xcoord-1][ycoord-1].num_pieces = 0;
+        board[xcoord-1][ycoord-1].stack = NULL;
+        
     }
     else{
-        puts("Input 1 to move the whole stack or 2 to move just the top piece.";)
-        for(int i=0; i<board)
+        puts("Input 1 to move the whole stack or 2 to move just the top piece.");
+        for(int i=0; i<board; i++)
     }
 
 }
