@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/cianc/Downloads/Focus (1)/Focus/game_init.c
+stdio.h
+-
+stdlib.h
+-
+game_init.h
+C:/Users/cianc/Downloads/Focus (1)/Focus/game_init.h
+
+C:/Users/cianc/Downloads/Focus (1)/Focus/game_init.h
+
+C:/Users/cianc/Downloads/Focus (1)/Focus/input_output.c
+stdio.h
+-
+input_output.h
+C:/Users/cianc/Downloads/Focus (1)/Focus/input_output.h
+
+C:/Users/cianc/Downloads/Focus (1)/Focus/input_output.h
+game_init.h
+C:/Users/cianc/Downloads/Focus (1)/Focus/game_init.h
+
+C:/Users/cianc/Downloads/Focus (1)/Focus/main.c
+input_output.h
+C:/Users/cianc/Downloads/Focus (1)/Focus/input_output.h
+

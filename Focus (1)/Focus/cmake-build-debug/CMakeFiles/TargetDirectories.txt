@@ -1,0 +1,3 @@
+C:/Users/cianc/Downloads/Focus (1)/Focus/cmake-build-debug/CMakeFiles/Focus.dir
+C:/Users/cianc/Downloads/Focus (1)/Focus/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/cianc/Downloads/Focus (1)/Focus/cmake-build-debug/CMakeFiles/rebuild_cache.dir
