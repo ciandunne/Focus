@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "game_init.h"
 
 //Initialises players
@@ -8,10 +9,20 @@ void initialize_players(player players[PLAYERS_NUM]){
     players[1].player_color = GREEN;
 
     printf("Enter the name of the red player: ");
-    scanf("%s", &players[0].name);
+    fgets(&players[0].name, 20, stdin);
 
     printf("Enter the name of the green player: ");
-    scanf("%s", &players[1].name);
+    fgets(&players[1].name, 20, stdin);
+
+    //removing \n from read in name
+    char *ix;
+
+    //strchr finds the first instance of '\n' in the given string and sets the char pointer ix to hold the address of that location. Then we set this locations item to the null terminator
+    for(int i=0; i<2; i++) {
+        while ((ix = strchr(players[i].name, '\n')) != NULL) {
+            *ix = '\0';
+        }
+    }
 
     for(int i=0; i<2; i++){
         players[i].captures = 0;

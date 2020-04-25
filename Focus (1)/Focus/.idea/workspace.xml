@@ -12,7 +12,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a95c042f-4f5e-44cd-99c0-4463cc2710eb" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Focus.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Focus.dir/C.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Focus.dir/game_init.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Focus.dir/game_init.c.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Focus.dir/input_output.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Focus.dir/input_output.c.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Focus.dir/main.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Focus.dir/main.c.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Focus.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Focus.dir/objects.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/count.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Focus.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Focus.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game_init.c" beforeDir="false" afterPath="$PROJECT_DIR$/game_init.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/input_output.c" beforeDir="false" afterPath="$PROJECT_DIR$/input_output.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/turns.c" beforeDir="false" afterPath="$PROJECT_DIR$/turns.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/turns.h" beforeDir="false" afterPath="$PROJECT_DIR$/turns.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +96,7 @@
       <workItem from="1587573668684" duration="388000" />
       <workItem from="1587575494425" duration="2044000" />
       <workItem from="1587760981919" duration="92000" />
-      <workItem from="1587761088835" duration="1599000" />
+      <workItem from="1587761088835" duration="16978000" />
     </task>
     <servers />
   </component>
@@ -106,26 +120,30 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="422" y="97" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1587761071684" />
-    <state width="1237" height="163" key="GridCell.Tab.0.bottom" timestamp="1587576713950">
+    <state width="1237" height="163" key="GridCell.Tab.0.bottom" timestamp="1587852827522">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1587576713950" />
-    <state width="1237" height="163" key="GridCell.Tab.0.center" timestamp="1587576713950">
+    <state width="1237" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1587852827522" />
+    <state width="1237" height="163" key="GridCell.Tab.0.center" timestamp="1587852827522">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1587576713950" />
-    <state width="1237" height="163" key="GridCell.Tab.0.left" timestamp="1587576713950">
+    <state width="1237" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1587852827522" />
+    <state width="1237" height="163" key="GridCell.Tab.0.left" timestamp="1587852827522">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1587576713950" />
-    <state width="1237" height="163" key="GridCell.Tab.0.right" timestamp="1587576713950">
+    <state width="1237" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1587852827522" />
+    <state width="1237" height="163" key="GridCell.Tab.0.right" timestamp="1587852827522">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1587576713950" />
+    <state width="1237" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1587852827522" />
     <state x="400" y="202" key="com.intellij.ide.util.TipDialog" timestamp="1587760989346">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="400" y="202" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1587760989346" />
     <state x="425" y="234" key="com.intellij.ide.util.TipDialog/0.23.1360.711@0.23.1360.711" timestamp="1585246555157" />
+    <state x="298" y="151" key="run.anything.popup" timestamp="1587852729237">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="298" y="151" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1587852729237" />
   </component>
 </project>

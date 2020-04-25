@@ -12,16 +12,14 @@ C:/Users/cianc/Desktop/UCD/SoftwareEngineering/easy/Focus (1)/Focus/input_output
 game_init.h
 C:/Users/cianc/Desktop/UCD/SoftwareEngineering/easy/Focus (1)/Focus/game_init.h
 
-C:/Users/cianc/Desktop/UCD/SoftwareEngineering/easy/Focus (1)/Focus/main.c
-turns.h
-C:/Users/cianc/Desktop/UCD/SoftwareEngineering/easy/Focus (1)/Focus/turns.h
-
 C:/Users/cianc/Desktop/UCD/SoftwareEngineering/easy/Focus (1)/Focus/turns.c
 turns.h
 C:/Users/cianc/Desktop/UCD/SoftwareEngineering/easy/Focus (1)/Focus/turns.h
 
 C:/Users/cianc/Desktop/UCD/SoftwareEngineering/easy/Focus (1)/Focus/turns.h
 stdio.h
+-
+stdlib.h
 -
 input_output.h
 C:/Users/cianc/Desktop/UCD/SoftwareEngineering/easy/Focus (1)/Focus/input_output.h

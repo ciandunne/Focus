@@ -3,6 +3,7 @@
 //
 
 #include <stdio.h>
+#include <stdlib.h>
 #include "input_output.h"
 
 #ifndef FOCUS_TURNS_H
@@ -17,3 +18,10 @@ typedef enum currTurn{
 
 void turn(player player1, square board [BOARD_SIZE][BOARD_SIZE]);
 
+void moveChoice(int choice);
+
+void stackMoveTop(square *orig, square *new);
+
+void stackMoveWhole(square *orig, square *new, int moves);
+
+int pieceCount(square zone);
