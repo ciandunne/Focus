@@ -4,17 +4,26 @@
 
 #include "turns.h"
 
-void turn(player playernow, square board [BOARD_SIZE][BOARD_SIZE]){
-    printf("%s turn\n", playernow.name);
+void turn(player *playernow, square board [BOARD_SIZE][BOARD_SIZE]){
+    printf("%s turn\n", playernow->name);
 
-    if(playernow.player_color == RED){
-        puts("Colour: RED");
+    if(playernow->player_color == RED){
+        printf("Colour: RED\n"
+             "Captures: %d\n", playernow->captures,
+             "Reserves: %d\n", playernow->reserves);
     }
     else{
-        puts("Colour: GREEN");
+        printf("Colour: GREEN"
+             "Captures: %d\n", playernow->captures,
+             "Reserves: %d\n", playernow->reserves);
     }
 
     int xcoord = 0, ycoord = 0;
+    int choice = 0;
+
+    while(choice == 0){
+        
+    }
 
     while(xcoord==0 && ycoord==0){
         puts("Input the coordinates of the stack you want to move, starting with the row.");
@@ -34,7 +43,7 @@ void turn(player playernow, square board [BOARD_SIZE][BOARD_SIZE]){
             continue;
         }
 
-        else if(board[ycoord-1][xcoord-1].stack->p_color != playernow.player_color){
+        else if(board[ycoord-1][xcoord-1].stack->p_color != playernow->player_color){
             puts("The top piece on this square is not your colour, please try again");
             xcoord = 0;
             ycoord = 0;
@@ -42,7 +51,6 @@ void turn(player playernow, square board [BOARD_SIZE][BOARD_SIZE]){
         }
     }
 
-    int choice = 0;
     int newxcoord, newycoord;
 
     if(board[ycoord-1][xcoord-1].num_pieces == 1){
@@ -211,6 +219,9 @@ void turn(player playernow, square board [BOARD_SIZE][BOARD_SIZE]){
         }
     }
 
+    if(pieceCount(board[newycoord-1][newxcoord-1]) > 5)
+        stackLimiter(&board[newycoord-1][newxcoord-1], playernow);
+
 }
 
 //Moves one piece from one stack to another
@@ -262,4 +273,32 @@ int pieceCount(square zone){
         count++;
     }
     return count;
+}
+
+
+void stackLimiter(square *zone, player *playernow){
+    piece *curr = zone->stack;
+    //Set temp to point to the 5th node in the stack
+    for(int i=1; i<5; i++)
+        curr = curr->next;
+
+    piece *temp = curr->next;
+
+    //Close the end of the linked list after the 5th node
+    curr->next = NULL;
+    curr = temp;
+    //Keep taking pieces off the end after the first five until there are no more pieces to take
+    while(curr != NULL){
+
+        //Adjust the reserved/captured pieces accordingly
+        if(curr->p_color == playernow->player_color)
+            playernow->reserves++;
+        else
+            playernow->captures++;
+
+        //Sets currs to point to the next node and frees the last node.
+        temp = curr;
+        curr = curr->next;
+        free(temp);
+    }
 }

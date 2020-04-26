@@ -17,12 +17,12 @@ int main() {
     //Keep calling turn function for each player until one player can no longer make a move
     while(i<20){
         if(nowturn == player1) {
-            turn(players[0], board);
+            turn(&players[0], board);
             nowturn = player2;
         }
 
         else {
-            turn(players[1], board);
+            turn(&players[1], board);
             nowturn = player1;
         }
         print_board(board);
