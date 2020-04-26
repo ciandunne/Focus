@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Focus.dir/game_init.c.obj"
   "CMakeFiles/Focus.dir/input_output.c.obj"
   "CMakeFiles/Focus.dir/main.c.obj"
+  "CMakeFiles/Focus.dir/stack_movement.c.obj"
   "CMakeFiles/Focus.dir/turns.c.obj"
   "Focus.exe"
   "Focus.exe.manifest"

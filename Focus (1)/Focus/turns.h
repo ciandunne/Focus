@@ -16,14 +16,6 @@ typedef enum currTurn{
     player2
 }currTurn;
 
-void turn(player *player1, square board [BOARD_SIZE][BOARD_SIZE]);
+void turn(player *playernow, square board [BOARD_SIZE][BOARD_SIZE]);
 
-void moveChoice(int choice);
-
-void stackMoveTop(square *orig, square *new);
-
-void stackMoveWhole(square *orig, square *new, int moves);
-
-int pieceCount(square zone);
-
-void stackLimiter(square *zone, player *playernow);
+int firstChoice(player *playernow, square board[BOARD_SIZE][BOARD_SIZE]);

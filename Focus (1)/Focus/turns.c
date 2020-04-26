@@ -1,12 +1,12 @@
 //
 // Created by cianc on 24/04/2020.
 //
-
-#include "turns.h"
+#include "stack_movement.h"
 
 void turn(player *playernow, square board [BOARD_SIZE][BOARD_SIZE]){
     printf("%s turn\n", playernow->name);
 
+    //Giving information about who's turn it is
     if(playernow->player_color == RED){
         printf("Colour: RED\n"
              "Captures: %d\n", playernow->captures,
@@ -19,102 +19,61 @@ void turn(player *playernow, square board [BOARD_SIZE][BOARD_SIZE]){
     }
 
     int xcoord = 0, ycoord = 0;
-    int choice = 0;
+    int newxcoord = 0, newycoord = 0;
 
-    while(choice == 0){
-        
+    //Making the first choice: what they want to do with their turn
+    int choice = firstChoice(playernow, board);
+
+    //Functionality to add a reserve piece back into the board
+    if(choice == 1){
+        while (newxcoord == 0 && newycoord == 0) {
+            puts("Input the coordinates of the square you want to add your piece to, starting with the row.");
+            scanf("%d%d", &newycoord, &newxcoord);
+
+            if (newxcoord <= 0 || newxcoord > 8 || newycoord <= 0 || newycoord > 8 || board[newxcoord - 1][newycoord - 1].type == INVALID) {
+                puts("Invalid square please, try again");
+                newxcoord = 0;
+                newycoord = 0;
+            }
+        }
+        reserveAddition(&board[ycoord-1][xcoord-1], playernow);
     }
 
-    while(xcoord==0 && ycoord==0){
-        puts("Input the coordinates of the stack you want to move, starting with the row.");
-        scanf("%d%d", &ycoord, &xcoord);
+    //Functionality to move one stack, or one piece from a stack
+    else {
+        //Allows user to pick the stack they want to move and ensures there is a stack there that they are able to move
+        while (xcoord == 0 && ycoord == 0) {
+            puts("Input the coordinates of the stack you want to move, starting with the row.");
+            scanf("%d%d", &ycoord, &xcoord);
 
-        if(xcoord<=0 || xcoord>8 || ycoord<=0 || ycoord>8 || board[xcoord-1][ycoord-1].type == INVALID){
-            puts("Invalid square please, try again");
-            xcoord = 0;
-            ycoord = 0;
-            continue;
-        }
-
-        else if(board[ycoord-1][xcoord-1].stack == NULL){
-            puts("There are no pieces to move on this square, please try again");
-            xcoord = 0;
-            ycoord = 0;
-            continue;
-        }
-
-        else if(board[ycoord-1][xcoord-1].stack->p_color != playernow->player_color){
-            puts("The top piece on this square is not your colour, please try again");
-            xcoord = 0;
-            ycoord = 0;
-            continue;
-        }
-    }
-
-    int newxcoord, newycoord;
-
-    if(board[ycoord-1][xcoord-1].num_pieces == 1){
-        while(choice==0){
-            puts("What direction do you want to move?\n "
-                 "Input 1 to go down,\n"
-                 "Input 2 to go up,\n"
-                 "Input 3 to go right,\n"
-                 "Input 4 to go left.");
-            scanf("%d", &choice);
-
-            if(choice<1 || choice>4){
-                puts("Invalid choice, try again");
-                choice = 0;
+            //Ensures that they have entered a square which is valid
+            if (xcoord <= 0 || xcoord > 8 || ycoord <= 0 || ycoord > 8 ||
+                board[xcoord - 1][ycoord - 1].type == INVALID) {
+                puts("Invalid square please, try again");
+                xcoord = 0;
+                ycoord = 0;
                 continue;
             }
-
-            switch(choice) {
-                case 1:
-                    newycoord = ycoord + 1;
-                    newxcoord = xcoord;
-                    break;
-                case 2:
-                    newycoord = ycoord - 1;
-                    newxcoord = xcoord;
-                    break;
-                case 3:
-                    newxcoord = xcoord + 1;
-                    newycoord = ycoord;
-                    break;
-                case 4:
-                    newxcoord = xcoord - 1;
-                    newycoord = ycoord;
-                    break;
-                default:
-                    break;
-            }
-            if(newxcoord<=0 || newxcoord>8 || newycoord<=0 || newycoord>8){
-                puts("Cant move off board, please try again");
-                choice = 0;
+                //Ensures that there is a piece on the square selected
+            else if (board[ycoord - 1][xcoord - 1].stack == NULL) {
+                puts("There are no pieces to move on this square, please try again");
+                xcoord = 0;
+                ycoord = 0;
                 continue;
             }
-            else if(board[newycoord-1][newxcoord-1].type == INVALID) {
-                puts("Move is to invalid square, please try again");
-                choice = 0;
+                //Ensures the piece on the square is the right colour
+            else if (board[ycoord - 1][xcoord - 1].stack->p_color != playernow->player_color) {
+                puts("The top piece on this square is not your colour, please try again");
+                xcoord = 0;
+                ycoord = 0;
                 continue;
             }
         }
-        stackMoveTop(&board[ycoord-1][xcoord-1], &board[newycoord-1][newxcoord-1]);
-    }
-    else{
-        while(choice == 0) {
-            puts("Input 1 to move the whole stack or 2 to move just the top piece.");
-            scanf("%d", &choice);
 
-            if(choice<1 || choice>2){
-                puts("Invalid choice, please try again.");
-                choice = 0;
-                continue;
-            }
-        }
-        if (choice == 2){
-            choice = 0;
-            while(choice==0){
+        //If there is only one piece on the chosen square
+        if (board[ycoord - 1][xcoord - 1].num_pieces == 1) {
+            //Allows user to move their piece one square in any direction and ensures it is a valid move
+            while (choice == 0) {
                 puts("What direction do you want to move?\n "
                      "Input 1 to go down,\n"
                      "Input 2 to go up,\n"
@@ -122,13 +81,13 @@ void turn(player *playernow, square board [BOARD_SIZE][BOARD_SIZE]){
                      "Input 4 to go left.");
                 scanf("%d", &choice);
 
-                if(choice<1 || choice>4){
+                if (choice < 1 || choice > 4) {
                     puts("Invalid choice, try again");
                     choice = 0;
                     continue;
                 }
 
-                switch(choice) {
+                switch (choice) {
                     case 1:
                         newycoord = ycoord + 1;
                         newxcoord = xcoord;
@@ -148,157 +107,163 @@ void turn(player *playernow, square board [BOARD_SIZE][BOARD_SIZE]){
                     default:
                         break;
                 }
-
-                if(newxcoord<=0 || newxcoord>8 || newycoord<=0 || newycoord>8){
+                if (newxcoord <= 0 || newxcoord > 8 || newycoord <= 0 || newycoord > 8) {
                     puts("Cant move off board, please try again");
                     choice = 0;
                     continue;
-                }
-
-                else if(board[newycoord-1][newxcoord-1].type == INVALID) {
+                } else if (board[newycoord - 1][newxcoord - 1].type == INVALID) {
                     puts("Move is to invalid square, please try again");
                     choice = 0;
                     continue;
                 }
             }
-            stackMoveTop(&board[ycoord-1][xcoord-1], &board[newycoord-1][newxcoord-1]);
+            stackMoveTop(&board[ycoord - 1][xcoord - 1], &board[newycoord - 1][newxcoord - 1]);
         }
-        else{
-            int moves = pieceCount(board[ycoord-1][xcoord-1]);
-            newxcoord = xcoord;
-            newycoord = ycoord;
 
-            for(int i=0; i<moves; i++){
+        else {
+            while (choice == 0) {
+                puts("Input 1 to move the whole stack or 2 to move just the top piece.");
+                scanf("%d", &choice);
+
+                if (choice < 1 || choice > 2) {
+                    puts("Invalid choice, please try again.");
+                    choice = 0;
+                    continue;
+                }
+            }
+            if (choice == 2) {
                 choice = 0;
-
-                while(choice == 0){
-                    printf("You have %d moves remaining with your stack\n", moves-i);
-                    puts("What is the direction you want to move?\n"
+                while (choice == 0) {
+                    puts("What direction do you want to move?\n "
                          "Input 1 to go down,\n"
                          "Input 2 to go up,\n"
                          "Input 3 to go right,\n"
                          "Input 4 to go left.");
                     scanf("%d", &choice);
 
-                    if(choice<1 || choice>4){
-                        puts("Invalid choice, please try again");
+                    if (choice < 1 || choice > 4) {
+                        puts("Invalid choice, try again");
                         choice = 0;
                         continue;
                     }
 
-                    switch(choice) {
+                    switch (choice) {
                         case 1:
-                            newycoord++;
+                            newycoord = ycoord + 1;
+                            newxcoord = xcoord;
                             break;
                         case 2:
-                            newycoord--;
+                            newycoord = ycoord - 1;
+                            newxcoord = xcoord;
                             break;
                         case 3:
-                            newxcoord++;
+                            newxcoord = xcoord + 1;
+                            newycoord = ycoord;
                             break;
                         case 4:
-                            newxcoord--;
+                            newxcoord = xcoord - 1;
+                            newycoord = ycoord;
                             break;
                         default:
                             break;
                     }
-                    if(newxcoord<=0 || newxcoord>8 || newycoord<=0 || newycoord>8){
+
+                    if (newxcoord <= 0 || newxcoord > 8 || newycoord <= 0 || newycoord > 8) {
                         puts("Cant move off board, please try again");
                         choice = 0;
                         continue;
-                    }
-
-                    else if(board[newycoord-1][newxcoord-1].type == INVALID) {
+                    } else if (board[newycoord - 1][newxcoord - 1].type == INVALID) {
                         puts("Move is to invalid square, please try again");
                         choice = 0;
                         continue;
                     }
                 }
+                stackMoveTop(&board[ycoord - 1][xcoord - 1], &board[newycoord - 1][newxcoord - 1]);
+            } else {
+                int moves = pieceCount(board[ycoord - 1][xcoord - 1]);
+                newxcoord = xcoord;
+                newycoord = ycoord;
+
+                for (int i = 0; i < moves; i++) {
+                    choice = 0;
+
+                    while (choice == 0) {
+                        printf("You have %d moves remaining with your stack\n", moves - i);
+                        puts("What is the direction you want to move?\n"
+                             "Input 1 to go down,\n"
+                             "Input 2 to go up,\n"
+                             "Input 3 to go right,\n"
+                             "Input 4 to go left.");
+                        scanf("%d", &choice);
+
+                        if (choice < 1 || choice > 4) {
+                            puts("Invalid choice, please try again");
+                            choice = 0;
+                            continue;
+                        }
+
+                        switch (choice) {
+                            case 1:
+                                newycoord++;
+                                break;
+                            case 2:
+                                newycoord--;
+                                break;
+                            case 3:
+                                newxcoord++;
+                                break;
+                            case 4:
+                                newxcoord--;
+                                break;
+                            default:
+                                break;
+                        }
+                        if (newxcoord <= 0 || newxcoord > 8 || newycoord <= 0 || newycoord > 8) {
+                            puts("Cant move off board, please try again");
+                            choice = 0;
+                            continue;
+                        } else if (board[newycoord - 1][newxcoord - 1].type == INVALID) {
+                            puts("Move is to invalid square, please try again");
+                            choice = 0;
+                            continue;
+                        }
+                    }
+                }
+                stackMoveWhole(&board[ycoord - 1][xcoord - 1], &board[newycoord - 1][newxcoord - 1], moves);
             }
-            stackMoveWhole(&board[ycoord-1][xcoord-1], &board[newycoord-1][newxcoord-1], moves);
+        }
+    }
+    if (pieceCount(board[newycoord - 1][newxcoord - 1]) > 5)
+        stackLimiter(&board[newycoord - 1][newxcoord - 1], playernow);
+}
+
+//Manages the first choice every player has to make
+int firstChoice(player *playernow, square board[BOARD_SIZE][BOARD_SIZE]) {
+    int choice, ycoord, xcoord;
+
+    while (choice == 0 || choice == 1) {
+
+        puts("What would you like to do?\n "
+             "Input 1 to investigate a particular square, DOES NOT TAKE UP YOUR TURN\n"
+             "Input 2 to place one of your reserve pieces,\n"
+             "Input 3 to move a stack.");
+        scanf("%d", &choice);
+
+        if (choice < 1 || choice > 3) {
+            puts("Invalid choice, please try again.");
+            choice = 0;
+        }
+        else if (choice == 1) {
+            puts("Input the coordinates of the square you want to investigate, starting with the row.");
+            scanf("%d%d", &ycoord, &xcoord);
+
+            printStack(board[ycoord - 1][xcoord - 1], ycoord, xcoord);
+        }
+        else if (choice == 2 && playernow->reserves==0){
+            puts("You have no reserves pieces, please try again.");
+            choice = 0;
         }
     }
 
-    if(pieceCount(board[newycoord-1][newxcoord-1]) > 5)
-        stackLimiter(&board[newycoord-1][newxcoord-1], playernow);
-
-}
-
-//Moves one piece from one stack to another
-void stackMoveTop(square *orig, square *new){
-    //Changing the number of pieces each of the recorded squares has
-    new->num_pieces++;
-    orig->num_pieces--;
-
-    //Adjusting the stacks
-    piece *temp;
-
-    //Adding piece to new stack
-    temp = new->stack;
-    new->stack = (piece *)malloc(sizeof(piece));
-    new->stack->p_color = orig->stack->p_color;
-    new->stack->next = temp;
-
-    //Removing top piece from first stack
-    temp = orig->stack;
-    orig->stack = orig->stack->next;
-    free(temp);
-
-}
-
-//Moves entire stack from one square to the other
-void stackMoveWhole(square *orig, square *new, int moves){
-    //Changing the number of pieces in the stack
-    orig->num_pieces = orig->num_pieces-moves;
-    new->num_pieces = new->num_pieces+moves;
-
-    //Changing the stack itself
-    piece *temp;
-    temp = orig->stack;
-
-    while(temp->next != NULL)
-        temp = temp->next;
-
-    temp->next = new->stack;
-    new->stack = orig->stack;
-    orig->stack = NULL;
-}
-
-
-int pieceCount(square zone){
-    piece *temp = zone.stack;
-    int count = 0;
-    while(temp!=NULL){
-        temp = temp->next;
-        count++;
-    }
-    return count;
-}
-
-
-void stackLimiter(square *zone, player *playernow){
-    piece *curr = zone->stack;
-    //Set temp to point to the 5th node in the stack
-    for(int i=1; i<5; i++)
-        curr = curr->next;
-
-    piece *temp = curr->next;
-
-    //Close the end of the linked list after the 5th node
-    curr->next = NULL;
-    curr = temp;
-    //Keep taking pieces off the end after the first five until there are no more pieces to take
-    while(curr != NULL){
-
-        //Adjust the reserved/captured pieces accordingly
-        if(curr->p_color == playernow->player_color)
-            playernow->reserves++;
-        else
-            playernow->captures++;
-
-        //Sets currs to point to the next node and frees the last node.
-        temp = curr;
-        curr = curr->next;
-        free(temp);
-    }
+    return choice;
 }

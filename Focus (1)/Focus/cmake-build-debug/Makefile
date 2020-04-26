@@ -203,6 +203,33 @@ main.c.s:
 	$(MAKE) -f CMakeFiles\Focus.dir\build.make CMakeFiles/Focus.dir/main.c.s
 .PHONY : main.c.s
 
+stack_movement.obj: stack_movement.c.obj
+
+.PHONY : stack_movement.obj
+
+# target to build an object file
+stack_movement.c.obj:
+	$(MAKE) -f CMakeFiles\Focus.dir\build.make CMakeFiles/Focus.dir/stack_movement.c.obj
+.PHONY : stack_movement.c.obj
+
+stack_movement.i: stack_movement.c.i
+
+.PHONY : stack_movement.i
+
+# target to preprocess a source file
+stack_movement.c.i:
+	$(MAKE) -f CMakeFiles\Focus.dir\build.make CMakeFiles/Focus.dir/stack_movement.c.i
+.PHONY : stack_movement.c.i
+
+stack_movement.s: stack_movement.c.s
+
+.PHONY : stack_movement.s
+
+# target to generate assembly for a file
+stack_movement.c.s:
+	$(MAKE) -f CMakeFiles\Focus.dir\build.make CMakeFiles/Focus.dir/stack_movement.c.s
+.PHONY : stack_movement.c.s
+
 turns.obj: turns.c.obj
 
 .PHONY : turns.obj
@@ -248,6 +275,9 @@ help:
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... stack_movement.obj
+	@echo ... stack_movement.i
+	@echo ... stack_movement.s
 	@echo ... turns.obj
 	@echo ... turns.i
 	@echo ... turns.s

@@ -91,6 +91,12 @@
 		<Unit filename="C:/Users/cianc/Desktop/UCD/SoftwareEngineering/easy/Focus (1)/Focus/main.c">
 			<Option target="Focus"/>
 		</Unit>
+		<Unit filename="C:/Users/cianc/Desktop/UCD/SoftwareEngineering/easy/Focus (1)/Focus/stack_movement.c">
+			<Option target="Focus"/>
+		</Unit>
+		<Unit filename="C:/Users/cianc/Desktop/UCD/SoftwareEngineering/easy/Focus (1)/Focus/stack_movement.h">
+			<Option target="Focus"/>
+		</Unit>
 		<Unit filename="C:/Users/cianc/Desktop/UCD/SoftwareEngineering/easy/Focus (1)/Focus/turns.c">
 			<Option target="Focus"/>
 		</Unit>

@@ -13,8 +13,15 @@ CMakeFiles/Focus.dir/main.c.obj
  C:/Users/cianc/Desktop/UCD/SoftwareEngineering/easy/Focus (1)/Focus/input_output.h
  C:/Users/cianc/Desktop/UCD/SoftwareEngineering/easy/Focus (1)/Focus/main.c
  C:/Users/cianc/Desktop/UCD/SoftwareEngineering/easy/Focus (1)/Focus/turns.h
+CMakeFiles/Focus.dir/stack_movement.c.obj
+ C:/Users/cianc/Desktop/UCD/SoftwareEngineering/easy/Focus (1)/Focus/game_init.h
+ C:/Users/cianc/Desktop/UCD/SoftwareEngineering/easy/Focus (1)/Focus/input_output.h
+ C:/Users/cianc/Desktop/UCD/SoftwareEngineering/easy/Focus (1)/Focus/stack_movement.c
+ C:/Users/cianc/Desktop/UCD/SoftwareEngineering/easy/Focus (1)/Focus/stack_movement.h
+ C:/Users/cianc/Desktop/UCD/SoftwareEngineering/easy/Focus (1)/Focus/turns.h
 CMakeFiles/Focus.dir/turns.c.obj
  C:/Users/cianc/Desktop/UCD/SoftwareEngineering/easy/Focus (1)/Focus/game_init.h
  C:/Users/cianc/Desktop/UCD/SoftwareEngineering/easy/Focus (1)/Focus/input_output.h
+ C:/Users/cianc/Desktop/UCD/SoftwareEngineering/easy/Focus (1)/Focus/stack_movement.h
  C:/Users/cianc/Desktop/UCD/SoftwareEngineering/easy/Focus (1)/Focus/turns.c
  C:/Users/cianc/Desktop/UCD/SoftwareEngineering/easy/Focus (1)/Focus/turns.h
