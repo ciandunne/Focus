@@ -15,7 +15,7 @@ int main() {
     print_board(board);
 
     //Keep calling turn function for each player until one player can no longer make a move
-    while(i<20){
+    while(i<50){
         if(nowturn == player1) {
             turn(&players[0], board);
             nowturn = player2;

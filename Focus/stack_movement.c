@@ -56,17 +56,20 @@ void reserveAddition(square *zone, player *playernow){
     zone->stack->p_color = playernow->player_color;
 }
 
+//Counts the number of pieces in a stack
 int pieceCount(square zone){
     piece *temp = zone.stack;
     int count = 0;
+
     while(temp!=NULL){
         temp = temp->next;
         count++;
     }
+
     return count;
 }
 
-
+//Removes the bottom pieces from the stack until there are only 5 pieces in the stack
 void stackLimiter(square *zone, player *playernow){
     piece *curr = zone->stack;
     //Set temp to point to the 5th node in the stack
@@ -74,6 +77,7 @@ void stackLimiter(square *zone, player *playernow){
         curr = curr->next;
 
     piece *temp = curr->next;
+    int reserves = 0, captures = 0;
 
     //Close the end of the linked list after the 5th node
     curr->next = NULL;
@@ -82,18 +86,24 @@ void stackLimiter(square *zone, player *playernow){
     while(curr != NULL){
 
         //Adjust the reserved/captured pieces accordingly
-        if(curr->p_color == playernow->player_color)
+        if(curr->p_color == playernow->player_color) {
             playernow->reserves++;
-        else
+            reserves++;
+        }
+        else {
             playernow->captures++;
+            captures++;
+        }
 
         //Sets currs to point to the next node and frees the last node.
         temp = curr;
         curr = curr->next;
         free(temp);
     }
+    printf("This stack has been shortened and you have been give %d reserve pieces and have captured %d opponent pieces\n", reserves, captures);
 }
 
+//Prints the full contents of a square
 void printStack(square zone, int ycoord, int xcoord){
     printf("The square located in row %d, column %d has the following stack\n", ycoord, xcoord);
 
@@ -105,8 +115,9 @@ void printStack(square zone, int ycoord, int xcoord){
 
     while(temp!=NULL){
         if(temp->p_color == RED)
-            puts("R");
+            puts("Red");
         else
-            puts("G");
+            puts("Green");
+        temp = temp->next;
     }
 }
