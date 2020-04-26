@@ -1,3 +1,0 @@
-C:/Users/cianc/Desktop/UCD/SoftwareEngineering/easy/Focus (1)/Focus/cmake-build-debug/CMakeFiles/Focus.dir
-C:/Users/cianc/Desktop/UCD/SoftwareEngineering/easy/Focus (1)/Focus/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/cianc/Desktop/UCD/SoftwareEngineering/easy/Focus (1)/Focus/cmake-build-debug/CMakeFiles/rebuild_cache.dir
