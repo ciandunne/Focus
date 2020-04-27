@@ -305,8 +305,10 @@ int winCondition(square board[BOARD_SIZE][BOARD_SIZE], player playernow){
     for(int i=0; i<BOARD_SIZE; i++){
         for(int j=0; j<BOARD_SIZE; j++){
             //If any squares on the board have a top piece colour the same as the player then return 0
-            if(board[i][j].stack->p_color == playernow.player_color)
+            if(board[i][j].stack != NULL && board[i][j].stack->p_color == playernow.player_color) {
                 return 0;
+            }
+            printf("%d %d\n", i, j);
         }
     }
     //Otherwise return 1
