@@ -288,9 +288,27 @@ int firstChoice(player *playernow, square board[BOARD_SIZE][BOARD_SIZE]) {
             puts("You have no reserves pieces, please try again.");
             choice = 0;
         }
-        //else if (choice == 3)
-            //Check if they have any pieces their colour on the board
+        else if (choice == 3 && winCondition(board, *playernow) == 1){
+            puts("No pieces are available to move on the board, you must place your reserve pieces.");
+            choice = 0;
+        }
+
     }
 
     return choice;
+}
+
+/*Returns 0 if the player being investigated has pieces on the board they can move yet,
+ * or returns 1 if the player doesnt have any pieces on the board to move?
+ */
+int winCondition(square board[BOARD_SIZE][BOARD_SIZE], player playernow){
+    for(int i=0; i<BOARD_SIZE; i++){
+        for(int j=0; j<BOARD_SIZE; j++){
+            //If any squares on the board have a top piece colour the same as the player then return 0
+            if(board[i][j].stack->p_color == playernow.player_color)
+                return 0;
+        }
+    }
+    //Otherwise return 1
+    return 1;
 }

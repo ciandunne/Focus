@@ -27,6 +27,7 @@ void initialize_players(player players[PLAYERS_NUM]){
     for(int i=0; i<2; i++){
         players[i].captures = 0;
         players[i].reserves = 0;
+        players[i].won = 0;
     }
 }
 

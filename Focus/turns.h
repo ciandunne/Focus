@@ -19,3 +19,5 @@ typedef enum currTurn{
 void turn(player *playernow, square board [BOARD_SIZE][BOARD_SIZE]);
 
 int firstChoice(player *playernow, square board[BOARD_SIZE][BOARD_SIZE]);
+
+int winCondition(square board[BOARD_SIZE][BOARD_SIZE], player playernow);

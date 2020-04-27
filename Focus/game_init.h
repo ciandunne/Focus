@@ -28,6 +28,8 @@ typedef struct player{
     char name[20];
     int captures;
     int reserves;
+    //won = 0 if player lost or game is not over and won = 1 if player won the game
+    int won;
 }player;
 
 // A piece
