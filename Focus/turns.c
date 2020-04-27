@@ -25,7 +25,7 @@ void turn(player *playernow, square board [BOARD_SIZE][BOARD_SIZE]){
     int choice = firstChoice(playernow, board);
 
     //Functionality to add a reserve piece back into the board
-    if(choice == 1){
+    if(choice == 2){
         while (newxcoord == 0 && newycoord == 0) {
             puts("Input the coordinates of the square you want to add your piece to, starting with the row.");
             scanf("%d%d", &newycoord, &newxcoord);
@@ -36,7 +36,7 @@ void turn(player *playernow, square board [BOARD_SIZE][BOARD_SIZE]){
                 newycoord = 0;
             }
         }
-        reserveAddition(&board[ycoord-1][xcoord-1], playernow);
+        reserveAddition(&board[newycoord-1][newxcoord-1], playernow);
     }
 
     //Functionality to move one stack, or one piece from a stack

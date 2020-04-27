@@ -121,3 +121,4 @@ void printStack(square zone, int ycoord, int xcoord){
         temp = temp->next;
     }
 }
+
