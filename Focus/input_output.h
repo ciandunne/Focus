@@ -7,3 +7,5 @@
 
 //Function to print the board
 void print_board(square board[BOARD_SIZE][BOARD_SIZE]);
+
+void printStack(square zone, int ycoord, int xcoord);

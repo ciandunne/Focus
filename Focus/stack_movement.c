@@ -105,22 +105,3 @@ void stackLimiter(square *zone, player *playernow){
     printf("This stack has been shortened and you have been give %d reserve pieces and have captured %d opponent pieces\n", reserves, captures);
 }
 
-//Prints the full contents of a square
-void printStack(square zone, int ycoord, int xcoord){
-    printf("The square located in row %d, column %d has the following stack\n", ycoord, xcoord);
-
-    piece *temp = zone.stack;
-
-    if(temp == NULL){
-        puts("Stack is empty");
-    }
-
-    while(temp!=NULL){
-        if(temp->p_color == RED)
-            puts("Red");
-        else
-            puts("Green");
-        temp = temp->next;
-    }
-}
-

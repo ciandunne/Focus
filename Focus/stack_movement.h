@@ -18,5 +18,3 @@ void reserveAddition(square *zone, player *playernow);
 int pieceCount(square zone);
 
 void stackLimiter(square *zone, player *playernow);
-
-void printStack(square zone, int ycoord, int xcoord);

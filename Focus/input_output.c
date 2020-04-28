@@ -28,3 +28,23 @@ void print_board(square board[BOARD_SIZE][BOARD_SIZE]){
         printf("|\n");
     }
 }
+
+//Prints the full contents of a square
+void printStack(square zone, int ycoord, int xcoord){
+    printf("The square located in row %d, column %d has the following stack\n", ycoord, xcoord);
+
+    piece *temp = zone.stack;
+
+    if(temp == NULL){
+        puts("Stack is empty");
+    }
+
+    while(temp!=NULL){
+        if(temp->p_color == RED)
+            puts("Red");
+        else
+            puts("Green");
+        temp = temp->next;
+    }
+}
+
