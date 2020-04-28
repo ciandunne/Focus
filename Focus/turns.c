@@ -8,14 +8,14 @@ void turn(player *playernow, square board [BOARD_SIZE][BOARD_SIZE]){
 
     //Giving information about who's turn it is
     if(playernow->player_color == RED){
-        printf("Colour: RED\n"
-             "Captures: %d\n", playernow->captures,
-             "Reserves: %d\n", playernow->reserves);
+        puts("Colour: RED");
+        printf("Captures: %d\n", playernow->captures);
+        printf("Reserves: %d\n", playernow->reserves);
     }
     else{
-        printf("Colour: GREEN\n"
-             "Captures: %d\n", playernow->captures,
-             "Reserves: %d\n", playernow->reserves);
+        puts("Colour: GREEN");
+        printf("Captures: %d\n", playernow->captures);
+        printf("Reserves: %d\n", playernow->reserves);
     }
 
     int xcoord = 0, ycoord = 0;
@@ -245,6 +245,7 @@ void turn(player *playernow, square board [BOARD_SIZE][BOARD_SIZE]){
             }
         }
     }
+    //Removes items from the stack if it has more than 5 pieces in it
     if (pieceCount(board[newycoord - 1][newxcoord - 1]) > 5)
         stackLimiter(&board[newycoord - 1][newxcoord - 1], playernow);
 }
@@ -280,6 +281,7 @@ int firstChoice(player *playernow, square board[BOARD_SIZE][BOARD_SIZE]) {
                 }
             }
             printStack(board[ycoord - 1][xcoord - 1], ycoord, xcoord);
+            //Returns them back to the start of the loop after the stack is printed
             xcoord = 0;
             ycoord = 0;
         }
@@ -288,6 +290,7 @@ int firstChoice(player *playernow, square board[BOARD_SIZE][BOARD_SIZE]) {
             puts("You have no reserves pieces, please try again.");
             choice = 0;
         }
+        //Ensures that they have not chosen to move a stack when they have no stacks they can move on the board
         else if (choice == 3 && winCondition(board, *playernow) == 1){
             puts("No pieces are available to move on the board, you must place your reserve pieces.");
             choice = 0;
@@ -308,7 +311,6 @@ int winCondition(square board[BOARD_SIZE][BOARD_SIZE], player playernow){
             if(board[i][j].stack != NULL && board[i][j].stack->p_color == playernow.player_color) {
                 return 0;
             }
-            printf("%d %d\n", i, j);
         }
     }
     //Otherwise return 1

@@ -11,7 +11,7 @@ int main() {
 
     initialize_board(board);
 
-    int i=0;
+    //Keeps track of who's turn it is
     enum currTurn nowturn = player1;
     print_board(board);
 

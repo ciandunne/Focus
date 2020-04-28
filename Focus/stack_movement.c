@@ -28,20 +28,22 @@ void stackMoveTop(square *orig, square *new){
 
 //Moves entire stack from one square to the other
 void stackMoveWhole(square *orig, square *new, int moves){
-    //Changing the number of pieces in the stack
-    orig->num_pieces = orig->num_pieces-moves;
-    new->num_pieces = new->num_pieces+moves;
+    if(orig != new) {
+        //Changing the number of pieces in the stack
+        orig->num_pieces = orig->num_pieces - moves;
+        new->num_pieces = new->num_pieces + moves;
 
-    //Changing the stack itself
-    piece *temp;
-    temp = orig->stack;
+        //Changing the stack itself
+        piece *temp;
+        temp = orig->stack;
 
-    while(temp->next != NULL)
-        temp = temp->next;
+        while (temp->next != NULL)
+            temp = temp->next;
 
-    temp->next = new->stack;
-    new->stack = orig->stack;
-    orig->stack = NULL;
+        temp->next = new->stack;
+        new->stack = orig->stack;
+        orig->stack = NULL;
+    }
 }
 
 //Allows players to add their reserve pieces back onto the board
